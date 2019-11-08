@@ -6,12 +6,13 @@ using namespace std;
 float * read_file(string filename, int *n_points);
 void multiplica(float *x,float *y, int n_points);
 
+
 int main(){
   float *x=NULL;
   float *y=NULL;
   int n_x=0;
   int n_y=0;
-
+//se leen los valores que hay en los txt y se manda a la funcion multiplica
   x = read_file("valores_x.txt", &n_x);
   y = read_file("valores_y.txt", &n_y);
   multiplica(x, y,n_x);
@@ -49,10 +50,9 @@ float * read_file(string filename, int *n_points){
     getline(infile, line);
   }
   infile.close();
-
   return array;
 }
-       
+// se crea la función que multiplica cada valor de las listas entre si y se imprime ese valor.   
 void multiplica(float *x, float *y, int n_points){
   float a=0;
   for(int i=0;i<n_points;i++){
